@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url(../styles/reset.css);
+
+
+:root{
+    --cor-principal: #000000;
+    --cor-secundaria: #ffffff;
+    --cor-texto: #000000;
+    --fonte-principal: "Montserrat", sans-serif;
+    --background-color: #000000;
+    --text-color: #FFFFFF;
+    --fonte-principal: "Montserrat", sans-serif;
+}
+
+
+
+body {
+    font-family: var(--fonte-principal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #000, #fff);
+    background-size: 200% 200%;
+    animation: gradientMove 4.5s infinite alternate;
+    color: #fff;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.container {
+    display: flex;
+    width: 100rem;
+    height: 80%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease; /* Suaviza a transição de tamanho */
+}
+
+
+
+.left-panel {
+    flex: 3; /* Aumente o espaço ocupado para 3 partes */
+    background: rgba(0, 0, 0, 0.8);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    color: #fff;
+    transition: flex 0.3s ease; /* Suaviza a transição de tamanho */
+}
+
+.left-panel h1 {
+    font-size: 5.5rem;
+    margin-bottom: 40px;
+
+}
+
+.tag {
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+    padding: 10px 40px;
+    border-radius: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.right-panel {
+    flex: 1; /* Mantém o espaço menor para o painel direito */
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: flex 0.3s ease; /* Suaviza a transição de tamanho */
+}
+
+.right-panel:hover {
+    flex: 2; /* Expande o painel direito ao passar o mouse */
+}
+
+.right-panel:hover ~ .left-panel {
+    flex: 2; /* Diminui o tamanho do painel esquerdo proporcionalmente */
+}
+
+.login-box {
+    background-color: #fff;
+    color: #333;
+    padding: 60px;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+}
+
+.login-box h2 {
+    font-size: 3.0rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.login-box p {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-container i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333;
+    cursor: pointer;
+}
+
+.input-container i.bxs-user {
+    left: 10px;
+}
+
+.input-container i.bxs-lock-alt {
+    left: 10px;
+}
+
+.input-container i.toggle-password {
+    right: 5px; /* Alinhado à direita */
+}
+
+.input-container input {
+    width: 90%;
+    height: 100%;
+    padding: 12px;
+    padding-left: 30px; /* Espaço para o ícone */
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    color: #000000;
+}
+
+.input-container input::placeholder {
+    color: #aaa;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me input {
+    margin-right: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #000000;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: #000000;
+    transform: scale(1.05);
+}
+
+/* Estilo para o título expansível */
+.expandable-title {
+    position: relative;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+    text-align: center;
+}
+
+.expandable-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.expandable-title:hover {
+    font-size: 2.2rem;
+    transform: scale(1.1);
+}
+
+/* Configuração do left-panel para conter a expansão */
+.left-panel {
+    flex: 2;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    color: #fff;
+    overflow: hidden; /* Impede que o conteúdo ultrapasse os limites */
+    position: relative; /* Necessário para "conter" elementos */
+}
+
+/* Estilo da tag */
+.tag {
+    display: inline-block;
+    font-size: 2rem;
+    padding: 10px 40px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, font-size 0.3s ease, padding 0.3s ease;
+    position: relative; /* Garante alinhamento no left-panel */
+}
+
+/* Efeito de expansão no hover */
+.tag:hover {
+    transform: scale(1.5); /* Expande proporcionalmente */
+    font-size: 1.5rem;    /* Aumenta o tamanho do texto */
+    padding: 10px 60px;   /* Aumenta o preenchimento interno */
+}
+
+

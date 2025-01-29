@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url(../styles/reset.css);
+
+:root{
+    --cor-principal: #000000;
+    --cor-secundaria: #ffffff;
+    --cor-texto: #000000;
+    --fonte-principal: "Montserrat", sans-serif;
+    --background-color: #f4f4f4;
+    --text-color: #333333;
+    --menu-bg: #222222;
+    --menu-text: #ffffff;
+    --header-bg: #ffffff;
+    --header-text: #000000;
+}
+
+:root {
+    --cor-principal: #000000;
+    --cor-secundaria: #ffffff;
+    --cor-texto: #000000;
+    --fonte-principal: 'Montserrat', sans-serif;
+    --menu-bg: #1a1a1a;
+    --menu-hover-bg: #333333;
+    --menu-text: #ffffff;
+    --header-bg: #000000; /* Padronizado */
+    --header-text: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fonte-principal);
+    display: flex; /* Organiza barra lateral e conteúdo principal em colunas */
+    height: 100vh; /* Mesma altura da janela */
+    overflow-x: hidden; 
+}
+
+/* Menu Lateral */
+.menu-lateral {
+    width: 250px; /* Largura padronizada */
+    background-color: var(--menu-bg);
+    color: var(--menu-text);
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column; /* Garante o empilhamento de links */
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.15);
+}
+
+.menu-lateral ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-lateral li {
+    padding: 1rem;
+}
+
+.menu-lateral a {
+    color: var(--menu-text);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    display: block; /* Garante que links preencham toda a área clicável */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-lateral a:hover {
+    background-color: var(--menu-hover-bg);
+    transform: scale(1.05); /* Ampliar levemente ao passar o mouse */
+    border-radius: 4px;
+}
+
+/* Header - Padronização */
+.cabecalho {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.cabecalho .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--header-text);
+    margin-left: 1rem;
+}
+
+.cabecalho_menu {
+    margin-right: 1rem;
+    display: flex;
+    gap: 1rem; /* Espaçamento uniforme entre itens do menu */
+}
+
+.cabecalho_menu a {
+    color: var(--header-text);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.cabecalho_menu a:hover {
+    text-decoration: underline;
+}
+
+/* Conteúdo Principal */
+.conteudo {
+    flex: 1; /* Expande o conteúdo principal */
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cor-secundaria);
+}
+
+.principal {
+    padding: 1.5rem; /* Margem para conteúdos internos */
+    overflow-y: auto; /* Habilita rolagem no conteúdo principal */
+}
+
+.titleSearch {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.searchrelatorio {
+    text-align: center;
+    width: 40rem;
+    height: 5rem;
+    padding-top: 1rem;
+    padding: 1rem;
+    margin-left: 25rem;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.inputsearch{
+    width: 40rem;
+    height: 3.5rem;
+}
+
+.report-section {
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.report-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.report-list {
+    text-align: center;
+    list-style: none;
+    padding: 0rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+
+.report-item {
+    background-color: #ffffff;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.report-item h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    color: var(--cor-principal);
+}
+
+.report-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.paragrafo {
+    font-size: 0.9rem;
+    padding-top: 50px;
+}

@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("responsivo.css");
+
+
+html, body {
+    height: 100%;
+    overflow-x: hidden; /* Evita rolagem horizontal */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.container {
+    flex-shrink: 0; /* Previne colapso de containers */
+}
+
+
+:root{
+    --cor-principal: #000000;
+    --cor-secundaria: #ffffff;
+    --cor-texto: #000000;
+    --fonte-principal: "Montserrat", sans-serif;
+    --background-color: #000000;
+    --text-color: #FFFFFF;
+    --fonte-principal: "Montserrat", sans-serif;
+
+    --card-background-color: rgba(255, 255, 255, 0.015);
+    --card-border-color: #FFFFFF;
+    --card-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05), 0px 8px 15px rgba(0, 0, 0, 0.1), 0 0 0 1px var(--card-border-color);
+    --card-label-color: #FFFFFF;
+    --card-icon-bg: #FFFFFF;
+    --card-hover-border-color: gray;
+    --card-hover-icon-bg: #FFFFFF;
+}
+
+body {
+    background-image: url(../assets/imagens/Background.png);
+    background-size: cover; /* Faz a imagem cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    min-height: 100vh; /* Garante que o fundo ocupe toda a altura da tela */
+    display: flex;
+    flex-direction: column;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: var(--cor-principal);        /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--cor-secundaria);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid var(--cor-principal);  /* creates padding around scroll thumb */
+  }
+
+nav {
+    font-family: var(--fonte-principal);
+}
+
+.cabecalho {
+    padding: 20px; /* Espaçamento interno do cabeçalho */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espaça o logo e o menu para as extremidades */
+    position: relative;
+}
+
+.logo {
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-principal);
+    font-size: 1.5rem;
+}
+
+.cabecalho_menu {
+    display: flex;
+    gap: 20px; /* Espaçamento entre os links */
+}
+
+.menu_link {
+    font-family: var(--fonte-principal);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--cor-secundaria);
+    text-decoration: none;
+}
+
+.destaque_titulo {
+    color: var(--cor-secundaria);
+    font-size: 120px;
+}
+
+.container {
+    font-weight: 150; /* peso leve do texto */
+}
+
+.principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    height: 100vh;
+
+}
+
+.titulo_principal {
+    font-family: var(--fonte-principal);
+    color: var(--cor-principal);
+    font-size: 100px;
+    font-weight: 700;   
+    text-align: center; 
+}
+
+.segundo {
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espaçamento entre o texto e a imagem */
+    text-align: center;
+    height: 100vh;
+}
+
+.container_sobre {
+    max-width: 50%; /* Limita a largura do texto */
+}
+
+.titulo_descricao {
+    font-family: var(--fonte-principal); /* fonte principal */
+    font-weight: 700; /* peso da fonte */
+    font-size: 50px; /* tamanho da fonte */
+    color: var(--cor-primaria); /* cor do texto */
+    margin-top: 5%;
+    text-align: left;
+    padding-right: 10%;
+}
+
+.sobreNos {
+    text-align: left;
+    margin-top: 5%;
+    font-size: 30px; /* tamanho da fonte */
+    font-weight: 400; /* peso da fonte */
+    color: var(--cor-texto); /* cor do texto */
+    font-family: var(--fonte-principal); /* fonte principal */
+}
+
+.imagem_segundo {
+    width: 35%;
+}
+
+.terceiro {
+    height: 100vh;
+    background-color: var(--cor-principal);    
+}
+
+.grid {
+    display: flex; /* Ativa o Flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    flex-wrap: wrap; /* Permite que os cards quebrem linha, caso necessário */
+    gap: 20px; /* Espaçamento entre os cards */
+    min-height: 100vh; /* Garante que os cards estejam centralizados na altura da tela */
+} 
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 32px;
+    padding: 20px;
+  }
+  
+  .card {
+    font-family: var(--fonte-principal);
+    background-color: var(--card-background-color);
+    box-shadow: var(--card-box-shadow);
+    padding: 56px 16px;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Ampliar levemente no hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Intensifica a sombra */
+  }
+  
+  .card .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    background-color: var(--card-icon-bg);
+    border-radius: 50%;
+    color: var(--card-icon-color);
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover .icon {
+      transform: scale(1.05); /* Ampliar levemente no hover */
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Intensifica a sombra */
+  }
+  
+  .card h4 {
+    font-family: var(--fonte-principal);
+    font-weight: 700;
+    margin-top: 20px;
+    font-size: 25px;
+    color: var(--card-label-color);
+    text-align: center;
+  }
+  
+  .card p {
+    font-weight: 450;
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: var(--text-color);
+    text-align: center;
+    line-height: 1.6;
+  }
+  
+  
+  .gridQuinto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 32px;
+    padding: 20px;
+  }
+  
+  .cardQuinto {
+    font-family: var(--fonte-principal);
+    background-color: #FFFFFF;
+    box-shadow: var(--card-box-shadow);
+    padding: 56px 16px;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .cardQuinto {
+    font-family: var(--fonte-principal);
+    font-weight: 700;
+    margin-top: 20px;
+    font-size: 25px;
+    color: var(--card-label-color);
+    text-align: center;
+  }
+  
+  .cardQuinto {
+    font-weight: 450;
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: var(--background-color);
+    text-align: center;
+    line-height: 1.6;
+  }
+
+.container.quarto {
+    padding: 40px;
+    text-align: center;
+    height: 100vh;
+    background-color: var(--cor-secundaria);
+}
+
+.titulo {
+    font-family: var(--fonte-principal);
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 8%;
+    margin-top: 5%;
+}
+
+.planos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Permite que os cards se ajustem em telas menores */
+}
+
+.plano {
+    border: 1px solid #000; /* Borda ao redor de cada card */
+    padding: 60px;
+    width: 250px;
+    text-align: left;
+    font-family: var(--fonte-principal);
+    font-weight: 400;
+}
+
+.plano-titulo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.plano-descricao {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.plano-preco {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.quinto {
+    height: 100vh; /* Ocupa a altura total da tela */
+    background-color: var(--cor-principal);
+    display: flex;
+    flex-direction: column; /* Alinha o conteúdo verticalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    text-align: center;
+    padding: 20px; /* Espaço interno para evitar cortes */
+}
+
+.quinto h2, .quinto h3 {
+    font-family: var(--fonte-principal);
+    font-weight: 500;
+    font-size: 30px;
+    color: #FFFFFF;
+    margin: 10px 0; /* Espaçamento entre os títulos */
+}
+
+.gridQuinto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Gera colunas responsivas */
+    gap: 20px; /* Espaçamento entre os cards */
+    width: 100%; /* Ocupa a largura completa */
+    max-width: 1200px; /* Define um limite máximo de largura */
+    margin-top: 30px; /* Espaçamento superior entre os textos e os cards */
+}
+
+.cardQuinto {
+    background-color: #FFFFFF; /* Ajuste conforme seu design */
+    color:  #000000;
+    padding: 20px;
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adiciona uma leve sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito ao passar o mouse */
+}
+
+.cardQuinto:hover {
+    transform: scale(1.05); /* Ampliar levemente no hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Intensifica a sombra */
+}
+
+.cardQuinto h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px; /* Espaçamento inferior */
+}
+
+.cardQuinto p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5; /* Melhora a leitura */
+}

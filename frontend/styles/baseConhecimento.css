@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('../styles/reset.css');
+
+:root {
+    --cor-principal: #000000;
+    --cor-secundaria: #ffffff;
+    --cor-texto: #000000;
+    --cor-menu: #1a1a1a;
+    --cor-menu-hover: #333333;
+    --cor-menu-texto: #ffffff;
+    --cor-card-bg: #f8f9fa;
+    --cor-card-borda: #dddddd;
+    --cor-card-sombra: rgba(0, 0, 0, 0.1);
+    --cor-btn: #000000;
+    --cor-btn-texto: #ffffff;
+    --fonte-principal: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    margin: 0;
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.menu-lateral {
+    width: 300px;
+    background-color: var(--cor-menu);
+    color: var(--cor-menu-texto);
+    padding: 1rem;
+    min-height: 100vh;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-lateral li {
+    padding: 0.5rem 1rem;
+}
+
+.menu-lateral a {
+    color: var(--cor-menu-texto);
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.menu-lateral a:hover {
+    background-color: var(--cor-menu-hover);
+    border-radius: 5px;
+    transform: scale(1.05);
+}
+
+.conteudo {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cor-secundaria);
+}
+
+header.cabecalho {
+    background-color: var(--cor-principal);
+    color: var(--cor-secundaria);
+    padding: 1rem;
+    text-align: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--cor-secundaria);
+    text-decoration: none;
+}
+
+main.principal {
+    padding: 2rem;
+    background-color: var(--cor-secundaria); /* Fundo suave para destacar o conteúdo */
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.welcome {
+    text-align: center; /* Centraliza o texto da seção de boas-vindas */
+    margin-bottom: 2rem;
+    color: #333333; /* Cor do texto para contraste */
+}
+
+.welcome h1 {
+    font-size: 2.5rem; /* Destaque no título */
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.welcome p {
+    font-size: 1.1rem; /* Tamanho legível para o texto */
+    line-height: 1.6;
+    color: #555555;
+}
+
+.documentacao {
+    margin-top: 2rem;
+    color: #333333;
+}
+
+.documentacao h2 {
+    font-size: 1.8rem; /* Destaque para os subtítulos */
+    color: var(--cor-principal); /* Usa a cor principal definida */
+    border-bottom: 2px solid var(--cor-principal); /* Linha decorativa */
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
+}
+
+.documentacao p, .documentacao ul, .documentacao ol {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555555;
+    margin-bottom: 1rem;
+}
+
+.documentacao ul {
+    list-style: disc inside;
+    margin-left: 1.2rem;
+}
+
+.documentacao ul li {
+    margin-bottom: 0.5rem;
+}
+
+.documentacao ol {
+    list-style: decimal inside;
+    margin-left: 1.2rem;
+}
+
+.documentacao ol li {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .menu-lateral {
+        width: 100%;
+        min-height: auto;
+    }
+    .conteudo {
+        padding: 1rem;
+        padding-top: 0;
+    }
+    main.principal {
+        padding: 1rem;
+        box-shadow: none;
+    }
+    .welcome h1 {
+        font-size: 2rem;
+    }
+    .documentacao h2 {
+        font-size: 1.5rem;
+    }
+}

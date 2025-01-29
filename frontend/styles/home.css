@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('../styles/reset.css');
+
+:root {
+    --cor-principal: #000000;
+    --cor-secundaria: #ffffff;
+    --cor-texto: #000000;
+    --cor-menu: #1a1a1a;
+    --cor-menu-hover: #333333;
+    --cor-menu-texto: #ffffff;
+    --cor-card-bg: #f8f9fa;
+    --cor-card-borda: #dddddd;
+    --cor-card-sombra: rgba(0, 0, 0, 0.1);
+    --cor-btn: #000000;
+    --cor-btn-texto: #ffffff;
+    --fonte-principal: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    margin: 0;
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.menu-lateral {
+    width: 250px;
+    background-color: var(--cor-menu);
+    color: var(--cor-menu-texto);
+    padding: 1rem;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-lateral li {
+    padding: 0.5rem 1rem;
+}
+
+.menu-lateral a {
+    color: var(--cor-menu-texto);
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.menu-lateral a:hover {
+    background-color: var(--cor-menu-hover);
+    border-radius: 5px;
+    transform: scale(1.05);
+}
+
+.welcome {
+    font-family: var(--fonte-principal);
+    font-size: 2rem;
+    text-align: center;
+    padding: 4rem;
+}
+
+.conteudo {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cor-secundaria);
+}
+
+header.cabecalho {
+    background-color: var(--cor-principal);
+    color: var(--cor-secundaria);
+    padding: 1rem;
+    text-align: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--cor-secundaria);
+    text-decoration: none;
+}
+
+main.principal {
+    flex-grow: 1;
+    padding: 1rem;
+}
+
+/* Estilo do card */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    padding-bottom: 10rem;
+}
+
+.card {
+    background-color: var(--cor-card-bg);
+    border: 1px solid var(--cor-card-borda);
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px var(--cor-card-sombra);
+    padding: 1rem;
+    max-width: 25rem;
+    text-align: center;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.btn-acessar {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--cor-btn);
+    color: var(--cor-btn-texto);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn-acessar:hover {
+    background-color: #333;
+    transform: translateY(-0.1rem);
+}
+
+/* Estilo para a seção de arquivos */
+.container-arquivos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.arquivos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.arquivo, .seta, .dashboard {
+    text-align: center;
+}
+
+.arquivo img, .seta img, .dashboard img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    margin: 0;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
