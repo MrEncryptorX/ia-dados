@@ -1,17 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url("responsivo.css");
 
-
-html, body {
-    height: 100%;
-    overflow-x: hidden; /* Evita rolagem horizontal */
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-}
-
-
-
 .container {
     flex-shrink: 0; /* Previne colapso de containers */
 }
@@ -35,12 +24,28 @@ html, body {
     --card-hover-icon-bg: #FFFFFF;
 }
 
+html, body {
+    height: 100%;
+    overflow-x: hidden; /* Evita rolagem horizontal */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 body {
-    background-image: url(../assets/imagens/Background.png);
-    background-size: cover; /* Faz a imagem cobrir toda a área */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Impede que a imagem se repita */
-    min-height: 100vh; /* Garante que o fundo ocupe toda a altura da tela */
+    background-image: url('/imagens/Background.png'); /* Ajuste o caminho conforme necessário */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -103,14 +108,13 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-grow: 1;
-    height: 100vh;
-
+    min-height: 100vh; /* Alterado de height para min-height */
+    background-color: rgba(0, 0, 0, 0.5); /* Adiciona um overlay escuro para melhorar a legibilidade */
 }
 
 .titulo_principal {
     font-family: var(--fonte-principal);
-    color: var(--cor-principal);
+    color: var(--cor-secundaria); /* Alterado para cor secundária para contrastar com o fundo escuro */
     font-size: 100px;
     font-weight: 700;   
     text-align: center; 
