@@ -42,20 +42,13 @@ body {
     background-color: var(--cor-menu);
     color: var(--cor-menu-texto);
     padding: 1rem;
-<<<<<<< HEAD
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 97%;
+    
 }
 
 .menu-lateral nav {
     display: flex;
     flex-direction: column;
     height: 96.5%;
-=======
-    transition: background-color var(--transition-duration), color var(--transition-duration); /* Transição suave para mudanças de tema */
->>>>>>> db3df6fda269feac30b3b740cc95a3409654dfe4
 }
 
 .menu-lateral ul {

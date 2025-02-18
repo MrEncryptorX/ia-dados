@@ -4,13 +4,7 @@
     <title>Home - InsightAI</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('serve_css', filename='home.css') }}">
-    <!-- Meta tags para SEO e acessibilidade -->
-    <meta name="description" content="Página inicial do InsightAI, seu painel de controle para análise de dados e previsões inteligentes.">
-    <meta name="keywords" content="InsightAI, dashboard, análise de dados, previsões, base de conhecimento">
-    <meta name="author" content="Equipe InsightAI">
-    <!-- Favicon (opcional) -->
-    <link rel="icon" href="{{ url_for('serve_images', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/home.css">
 </head>
 <body>
     <div class="container">
@@ -20,19 +14,13 @@
                 <ul class="menu-principal">
                     <li><a href="../templates/home.html">Dashboard</a></li>
                     <li><a href="#">Upload de Dados</a></li>
-<<<<<<< HEAD
                     <li><a href="../templates/chatbot.html">Chatbot</a></li>
                     <li><a href="../templates/relatorios.html">Relatórios</a></li>
                 </ul>
                 <ul class="menu-secundario">
                     <li><a href="../templates/configuracoes.html">Configurações</a></li>
                     <li><a href="../templates/index.html">Sobre Nós</a></li>
-=======
-                    <li><a href="{{ url_for('chatbot') }}">Chatbot</a></li>
-                    <li><a href="{{ url_for('relatorios') }}">Relatórios</a></li>
-                    <li><a href="#">Configurações</a></li>
-                    <li><a href="{{ url_for('index') }}">Sair</a></li> <!-- Adicionado link para a página inicial -->
->>>>>>> db3df6fda269feac30b3b740cc95a3409654dfe4
+                    <li><a href="#">Sair</a></li> <!-- Adicionado link para a página inicial -->
                 </ul>
             </nav>
         </aside>
@@ -54,7 +42,7 @@
                     <article class="card">
                         <h2 id="knowledge-header">Base de Conhecimento</h2>
                         <p>Acesse artigos, tutoriais e guias detalhados para aproveitar ao máximo o InsightAI. Encontre respostas para suas perguntas e aprenda novas técnicas.</p>
-                        <a href="{{ url_for('BaseDeConhecimento') }}" class="btn-acessar">Acessar</a>
+                        <a href="../templates/baseConhecimento.html" class="btn-acessar">Acessar</a>
                     </article>
                 </section>
 
@@ -62,22 +50,22 @@
                     <h2 id="arquivos-header" class="sr-only">Importar Arquivos</h2>
                     <div class="arquivos">
                         <div class="arquivo">
-                            <a href="{{ url_for('importjson') }}">
-                                <img alt="Importar Arquivo JSON" src="{{ url_for('serve_images', filename='arquivo-json.png') }}">
+                            <a href="../templates/importJson.html">
+                                <img alt="Importar Arquivo JSON" src="../assets/imagens/arquivo-json.png">
                             </a>
                             <p>JSON</p> <!-- Adicionado texto para identificar o tipo de arquivo -->
                         </div>
                         <div class="arquivo">
-                            <a href="{{ url_for('importcsv') }}">
-                                <img alt="Importar Arquivo CSV" src="{{ url_for('serve_images', filename='csv.png') }}">
+                            <a href="../templates/importCsv.html">
+                                <img alt="Importar Arquivo CSV" src="../assets/imagens/csv.png">
                             </a>
                             <p>CSV</p> <!-- Adicionado texto para identificar o tipo de arquivo -->
                         </div>
                         <div class="seta" aria-hidden="true">
-                            <img alt="Seta para a direita" src="{{ url_for('serve_images', filename='seta-direita-de-linha-reta-fina.png') }}">
+                            <img alt="Seta para a direita" src="../assets/imagens/seta-direita-de-linha-reta-fina.png">
                         </div>
                         <div class="arquivo" aria-hidden="true">
-                            <img alt="Imagem do Dashboard" src="{{ url_for('serve_images', filename='painel.png') }}">
+                            <img alt="Imagem do Dashboard" src="../assets/imagens/painel.png">
                         </div>
                     </div>
                 </section>
@@ -86,6 +74,6 @@
         </div>
     </div>
 
-    <script src="{{ url_for('serve_js', filename='script.js') }}"></script>
+    <script src="script.js"></script>
 </body>
 </html>

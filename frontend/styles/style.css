@@ -40,20 +40,12 @@ html, body {
 }
 
 body {
-<<<<<<< HEAD
+
     background-image: url(../assets/imagens/imagem_gerada\ \(3\).png);
     background-size: cover; /* Faz a imagem cobrir toda a área */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Impede que a imagem se repita */
     min-height: 100vh; /* Garante que o fundo ocupe toda a altura da tela */
-=======
-    background-image: url('/imagens/Background.png'); /* Ajuste o caminho conforme necessário */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    min-height: 100vh;
->>>>>>> db3df6fda269feac30b3b740cc95a3409654dfe4
     display: flex;
     flex-direction: column;
 }
@@ -123,11 +115,8 @@ nav {
 
 .titulo_principal {
     font-family: var(--fonte-principal);
-<<<<<<< HEAD
     color: var(--text-color); 
-=======
     color: var(--cor-secundaria); /* Alterado para cor secundária para contrastar com o fundo escuro */
->>>>>>> db3df6fda269feac30b3b740cc95a3409654dfe4
     font-size: 100px;
     font-weight: 700;   
     text-align: center; 
