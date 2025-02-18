@@ -36,12 +36,26 @@ body {
     background-color: var(--cor-menu);
     color: var(--cor-menu-texto);
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 97%;
+}
+
+.menu-lateral nav {
+    display: flex;
+    flex-direction: column;
+    height: 96.5%;
 }
 
 .menu-lateral ul {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+.menu-principal {
+    flex-grow: 1;
 }
 
 .menu-lateral li {
@@ -70,6 +84,7 @@ body {
 }
 
 .conteudo {
+    right: 100%;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -93,6 +108,7 @@ header.cabecalho {
 main.principal {
     flex-grow: 1;
     padding: 1rem;
+    width: 100%;
 }
 
 /* Estilo do card */
@@ -101,7 +117,7 @@ main.principal {
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
-    padding-bottom: 10rem;
+    padding-bottom: 10%;
 }
 
 .card {

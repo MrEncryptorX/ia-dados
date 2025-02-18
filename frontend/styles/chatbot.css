@@ -17,7 +17,7 @@ body {
 
 .titleSearch{
     text-align: center;
-    margin-top: 35%;
+    margin-top: 2%;
     font-size: 2rem;
 }
 
@@ -33,6 +33,7 @@ body {
     font-size: 1rem;
     border: 2px solid var(--cor-principal);
     border-radius: 25px;
+    margin-top: 85%;
     outline: none;
     transition: box-shadow 0.3s ease;
 }
@@ -40,7 +41,7 @@ body {
 .sendButton {
     position: absolute;
     right: -50px; /* Ajustado para ficar dentro do input */
-    top: 50%;
+    top: 96%;
     transform: translateY(-50%);
     background: none;
     border: none;
@@ -65,5 +66,5 @@ body {
 
 .paragrafo{
     font-size: 0.9rem;
-    padding-top: 16%;
+    padding-top: 2%;
 }

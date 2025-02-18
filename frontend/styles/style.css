@@ -36,7 +36,7 @@ html, body {
 }
 
 body {
-    background-image: url(../assets/imagens/Background.png);
+    background-image: url(../assets/imagens/imagem_gerada\ \(3\).png);
     background-size: cover; /* Faz a imagem cobrir toda a área */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Impede que a imagem se repita */
@@ -67,7 +67,8 @@ nav {
     padding: 20px; /* Espaçamento interno do cabeçalho */
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Espaça o logo e o menu para as extremidades */
+    justify-content: center; /* Espaça o logo e o menu para as extremidades */
+    gap: 60%;
     position: relative;
 }
 
@@ -110,7 +111,7 @@ nav {
 
 .titulo_principal {
     font-family: var(--fonte-principal);
-    color: var(--cor-principal);
+    color: var(--text-color); 
     font-size: 100px;
     font-weight: 700;   
     text-align: center; 
