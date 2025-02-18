@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
                 <li><a href="home.html">Dashboard</a></li>
                 <li><a href="#">Upload de Dados</a></li>
                 <li><a href="#">Chatbot</a></li>
-                <li><a href="#">Relatórios</a></li>
+                <li><a href="relatorios.html">Relatórios</a></li>
                 <li><a href="#">Configurações</a></li>
             </ul>
         </nav>
@@ -30,7 +30,12 @@
                 <section class="titleSearch">
                     <h1>Escreva o que deseja saber sobre os seu dados</h1>
                     <div class="searchBox">
-                        <input type="text" class="searchJson" placeholder="EX: Quero saber a previsão de vendas para o próximo mês">
+                        <div class="searchWrapper">
+                            <input type="text" class="searchJson" placeholder="EX: Quero saber a previsão de vendas para o próximo mês">
+                            <button class="sendButton" type="submit">
+                                <img src="../assets/imagens/enviar.png" alt="Enviar" class="sendArrow">
+                            </button>
+                        </div>
                     </div>
                     <div class="paragrafo">
                         <p> O InsightAI pode cometer erros. Considere verificar informações importantes. </p>

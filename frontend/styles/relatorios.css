@@ -34,42 +34,6 @@ body {
     overflow-x: hidden; 
 }
 
-/* Menu Lateral */
-.menu-lateral {
-    width: 250px; /* Largura padronizada */
-    background-color: var(--menu-bg);
-    color: var(--menu-text);
-    padding: 1rem 0;
-    display: flex;
-    flex-direction: column; /* Garante o empilhamento de links */
-    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.15);
-}
-
-.menu-lateral ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.menu-lateral li {
-    padding: 1rem;
-}
-
-.menu-lateral a {
-    color: var(--menu-text);
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    display: block; /* Garante que links preencham toda a área clicável */
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.menu-lateral a:hover {
-    background-color: var(--menu-hover-bg);
-    transform: scale(1.05); /* Ampliar levemente ao passar o mouse */
-    border-radius: 4px;
-}
-
 /* Header - Padronização */
 .cabecalho {
     background-color: var(--header-bg);
@@ -129,18 +93,50 @@ body {
 
 .searchrelatorio {
     text-align: center;
-    width: 40rem;
+    width: 45rem;
     height: 5rem;
     padding-top: 1rem;
     padding: 1rem;
-    margin-left: 25rem;
+    margin-left: 17rem;
     font-size: 1rem;
     color: var(--text-color);
+    position: relative; /* Adicionado para posicionamento do botão */
 }
 
-.inputsearch{
-    width: 40rem;
-    height: 3.5rem;
+.inputsearch {
+    width: 100%;
+    padding: 1rem 3.5rem 1rem 1rem; /* Aumentado o padding à direita para acomodar o botão */
+    font-size: 1rem;
+    border: 2px solid var(--cor-principal);
+    border-radius: 25px;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.sendButton {
+    position: absolute;
+    right: -45px; /* Ajustado para ficar dentro do input */
+    top: 40%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sendArrow {
+    width: 24px; /* Ajuste conforme necessário */
+    height: 24px; /* Ajuste conforme necessário */
+}
+
+/* Faz o botão aparecer quando o input não está vazio */
+.inputsearch:not(:placeholder-shown) + .sendButton {
+    opacity: 1;
 }
 
 .report-section {

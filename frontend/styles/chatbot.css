@@ -8,7 +8,6 @@
     --fonte-principal: "Montserrat", sans-serif;
     --background-color: #000000;
     --text-color: #FFFFFF;
-    --fonte-principal: "Montserrat", sans-serif;
 }
 
 body {
@@ -22,15 +21,49 @@ body {
     font-size: 2rem;
 }
 
+.searchWrapper {
+    position: relative;
+    width: 55%;
+    margin: 3% auto 0;
+}
+
 .searchJson {
-    border-radius: 4px;
-    width: 45rem;
-    height: 3.5rem;
-    margin-top: 3%;
-    text-align: center;
+    width: 100%;
+    padding: 1rem 3rem 1rem 1rem; /* Aumentado o padding à direita */
+    font-size: 1rem;
+    border: 2px solid var(--cor-principal);
+    border-radius: 25px;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.sendButton {
+    position: absolute;
+    right: -50px; /* Ajustado para ficar dentro do input */
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sendArrow {
+    width: 24px; /* Ajuste conforme necessário */
+    height: 24px; /* Ajuste conforme necessário */
+}
+
+/* Mostrar o botão quando o input não estiver vazio */
+.searchJson:not(:placeholder-shown) + .sendButton {
+    opacity: 1;
 }
 
 .paragrafo{
     font-size: 0.9rem;
-    padding-top: 95px;
+    padding-top: 16%;
 }
