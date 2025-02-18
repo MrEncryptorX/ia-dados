@@ -40,8 +40,7 @@ html, body {
 }
 
 body {
-
-    background-image: url(../assets/imagens/imagem_gerada\ \(3\).png);
+    background-image: url(/imagens/imagem_gerada.png);
     background-size: cover; /* Faz a imagem cobrir toda a área */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Impede que a imagem se repita */
