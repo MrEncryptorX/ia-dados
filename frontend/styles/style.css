@@ -110,7 +110,6 @@ nav {
     justify-content: center;
     align-items: center;
     min-height: 100vh; /* Alterado de height para min-height */
-    background-color: rgba(0, 0, 0, 0.5); /* Adiciona um overlay escuro para melhorar a legibilidade */
 }
 
 .titulo_principal {
