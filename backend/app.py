@@ -76,7 +76,7 @@ def cadastro():
         email = form.email.data
         password = form.password.data
 
-        # Hash da senha
+        # Hash da senha para armazenamento seguro
         hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
 
         # Inserir o usuário no banco de dados

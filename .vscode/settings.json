@@ -1,0 +1,9 @@
+{
+    "json.schemas": [
+        // Insira sua configuração de esquemas aqui, se necessário
+    ],
+    "python.pythonPath": "C:/Users/mathe/OneDrive/Desktop/dev/ia-dados/ia-dados/venv/Scripts/python.exe",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.autoComplete.extraPaths": ["C:/Users/mathe/OneDrive/Desktop/dev/ia-dados/ia-dados"]
+}
