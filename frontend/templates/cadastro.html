@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro InsightAI</title>
-    <link rel="stylesheet" href="../styles/cadastro.css">
-    <!-- Adicionando o link do Boxicons -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/cadastro.css') }}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="{{ url_for('static', filename='scripts/cadastro.js') }}"></script>
 </head>
 <body>
     <section class="container cadastro-section">
@@ -18,74 +18,48 @@
         <div class="right-panel">
             <div class="cadastro-box">
                 <h2>Crie sua Conta</h2>
-                <form>
-                    <!-- Input e ícone para o Nome -->
-                    <div class="input-container">
-                        <i class="bx bxs-user"></i>
-                        <input type="text" placeholder="Digite seu nome completo" required>
-                    </div>
-                    
-                    <!-- Input e ícone para o CPF -->
-                    <div class="input-container">
-                        <i class="bx bxs-id-card"></i>
-                        <input type="text" placeholder="Digite seu CPF" required>
-                    </div>
-
-                    <!-- Input e ícone para o E-mail -->
+                <form method="POST" action="{{ url_for('cadastro') }}">
+                    {{ form.csrf_token }}
                     <div class="input-container">
                         <i class="bx bxs-envelope"></i>
-                        <input type="email" placeholder="Digite seu e-mail" required>
+                        {{ form.email(placeholder="Digite seu e-mail", required=true) }}
+                        {% if form.email.errors %}
+                            <ul class="errors">
+                                {% for error in form.email.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
                     </div>
-
-                    <!-- Input e ícone para o Telefone -->
-                    <div class="input-container">
-                        <i class="bx bxs-phone"></i>
-                        <input type="tel" placeholder="Digite seu telefone" required>
-                    </div>
-
-                    <!-- Input e ícone para a Senha -->
-                    <div class="input-container">
-                        <i class="bx bxs-lock-alt"></i>
-                        <input type="password" id="password" placeholder="Digite sua senha" required>
-                        <i class="bx bxs-show toggle-password" onclick="togglePasswordVisibility()"></i>
-                    </div>
-
-                    <!-- Input e ícone para a Confirmação de Senha -->
                     <div class="input-container">
                         <i class="bx bxs-lock-alt"></i>
-                        <input type="password" id="confirm-password" placeholder="Confirme sua senha" required>
-                        <i class="bx bxs-show toggle-password" onclick="togglePasswordVisibility()"></i>
+                        {{ form.password(placeholder="Digite sua senha", required=true, id="password") }}
+                        <i class="bx bx-show toggle-password"></i>
+                        {% if form.password.errors %}
+                            <ul class="errors">
+                                {% for error in form.password.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
                     </div>
-
-                    <!-- Seleção de Sexo -->
                     <div class="input-container">
-                        <i class="bx bxs-user-circle"></i>
-                        <select required>
-                            <option value="" disabled selected>Selecione seu sexo</option>
-                            <option value="masculino">Masculino</option>
-                            <option value="feminino">Feminino</option>
-                            <option value="outro">Outro</option>
-                        </select>
+                        <i class="bx bxs-lock-alt"></i>
+                        {{ form.confirm_password(placeholder="Confirme sua senha", required=true, id="confirm-password") }}
+                        <i class="bx bx-show toggle-password"></i>
+                        {% if form.confirm_password.errors %}
+                            <ul class="errors">
+                                {% for error in form.confirm_password.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
                     </div>
-
                     <button type="submit" class="btn-primary">Criar Conta</button>
-                    <button type="button" onclick="window.location.href='../templates/login.html'">Já possui uma conta? Faça o login</button>
+                    <a href="{{ url_for('login') }}" class="btn-secondary">Já possui uma conta? Faça o login</a>
                 </form>
             </div>
         </div>
     </section>
-
-    <script>
-        function togglePasswordVisibility() {
-            const passwordFields = document.querySelectorAll('#password, #confirm-password');
-            passwordFields.forEach((field) => {
-                if (field.type === 'password') {
-                    field.type = 'text';
-                } else {
-                    field.type = 'password';
-                }
-            });
-        }
-    </script>
 </body>
 </html>

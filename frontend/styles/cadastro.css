@@ -1,219 +1,290 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url(../styles/reset.css);
 
-:root{
-    --cor-principal: #000000;
-    --cor-secundaria: #ffffff;
-    --cor-texto: #000000;
-    --fonte-principal: "Montserrat", sans-serif;
-    --background-color: #000000;
-    --text-color: #FFFFFF;
-    --fonte-principal: "Montserrat", sans-serif;
+/* Definição das variáveis de estilo para fácil manutenção e consistência */
+:root {
+    --cor-principal: #000000; /* Cor principal para elementos de destaque */
+    --cor-secundaria: #ffffff; /* Cor secundária para contraste */
+    --cor-texto: #000000; /* Cor do texto padrão */
+    --fonte-principal: "Montserrat", sans-serif; /* Fonte principal do projeto */
+    --background-color: #000000; /* Cor de fundo geral */
+    --text-color: #FFFFFF; /* Cor do texto em elementos com fundo escuro */
+    --fonte-principal: "Montserrat", sans-serif; /* Redefinição da fonte principal (redundante, pode ser removida) */
 }
 
-
+/* Estilos globais para o body */
 body {
-    font-family: var(--fonte-principal);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background: linear-gradient(135deg, #000, #fff);
-    color: #fff;
-    animation: gradientMove 4.5s infinite alternate;
+    font-family: var(--fonte-principal); /* Aplica a fonte principal definida nas variáveis */
+    display: flex; /* Utiliza flexbox para centralizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Define a altura para ocupar toda a viewport */
+    margin: 0; /* Remove margens padrão */
+    background: linear-gradient(135deg, #000, #fff); /* Define um gradiente linear como fundo */
+    color: #fff; /* Define a cor do texto para branco */
+    animation: gradientMove 4.5s infinite alternate; /* Aplica uma animação ao gradiente */
 }
 
+/* Animação do gradiente de fundo */
 @keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
+    0% {
+        background-position: 0% 50%; /* Posição inicial do gradiente */
+    }
+
+    100% {
+        background-position: 100% 50%; /* Posição final do gradiente */
+    }
 }
 
+/* Estilos para o container principal */
 .container {
-    display: flex;
-    width: 100rem;
-    height: 80%;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    display: flex; /* Utiliza flexbox para organizar os painéis */
+    width: 100rem; /* Define a largura do container */
+    height: 80%; /* Define a altura do container */
+    border-radius: 10px; /* Arredonda os cantos */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa os limites */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra suave */
 }
 
+/* Estilos para o painel esquerdo */
 .left-panel {
-    flex: 3;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: left;
-    color: #fff;
-    overflow: hidden;
+    flex: 3; /* Define a proporção de largura em relação ao painel direito */
+    background: rgba(0, 0, 0, 0.8); /* Define um fundo preto semi-transparente */
+    padding: 100px; /* Adiciona preenchimento interno */
+    display: flex; /* Utiliza flexbox para organizar o conteúdo */
+    flex-direction: column; /* Organiza os elementos em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    text-align: left; /* Alinha o texto à esquerda */
+    color: #fff; /* Define a cor do texto para branco */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa os limites */
 }
 
+/* Estilos para o título principal do painel esquerdo */
 .left-panel h1 {
-    font-size: 5.5rem;
-    margin-bottom: 50px;
-    align-items: flex-start;
-    text-align: center;
+    font-size: 5.5rem; /* Define o tamanho da fonte */
+    margin-bottom: 50px; /* Adiciona margem inferior */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    text-align: center; /* Centraliza o texto */
 }
 
+/* Estilos para o subtítulo do painel esquerdo */
 .left-panel h2 {
-    font-size: 3.5rem;
-    margin-bottom: 50px;
-    align-items: flex-start;
-    text-align: center;
+    font-size: 3.5rem; /* Define o tamanho da fonte */
+    margin-bottom: 50px; /* Adiciona margem inferior */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    text-align: center; /* Centraliza o texto */
 }
 
+/* Estilos para a tag (elemento de destaque) */
 .tag {
-    background-color: #fff;
-    color: rgb(0, 0, 0);
-    padding: 50px 40px;
-    border-radius: 20px;
-    font-size: 2.0rem;
-    font-weight: bold;
+    background-color: #fff; /* Define o fundo como branco */
+    color: rgb(0, 0, 0); /* Define a cor do texto como preto */
+    padding: 50px 40px; /* Adiciona preenchimento interno */
+    border-radius: 20px; /* Arredonda os cantos */
+    font-size: 2.0rem; /* Define o tamanho da fonte */
+    font-weight: bold; /* Define o texto como negrito */
 }
 
-
+/* Estilos para o painel direito */
 .right-panel {
-    flex: 3;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
+    flex: 3; /* Define a proporção de largura em relação ao painel esquerdo */
+    background: #fff; /* Define o fundo como branco */
+    display: flex; /* Utiliza flexbox para organizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 30px; /* Adiciona preenchimento interno */
 }
 
-
+/* Estilos para a caixa de cadastro */
 .cadastro-box {
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
+    width: 100%; /* Define a largura para ocupar todo o espaço disponível */
+    max-width: 400px; /* Define a largura máxima */
+    text-align: center; /* Centraliza o texto */
 }
 
+/* Estilos para o título da caixa de cadastro */
 .cadastro-box h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 2rem; /* Define o tamanho da fonte */
+    margin-bottom: 20px; /* Adiciona margem inferior */
+    color: #333; /* Define a cor do texto */
 }
 
+/* Estilos para o container dos inputs */
 .input-container {
-    position: relative;
-    margin-bottom: 15px;
-    width: 100%;
+    position: relative; /* Permite posicionar os ícones de forma absoluta */
+    margin-bottom: 15px; /* Adiciona margem inferior */
+    width: 100%; /* Define a largura para ocupar todo o espaço disponível */
 }
 
+/* Estilos para os ícones dentro dos inputs */
 .input-container i {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #666;
+    position: absolute; /* Permite posicionar os ícones */
+    left: 10px; /* Define a distância da borda esquerda */
+    top: 50%; /* Posiciona verticalmente no centro */
+    transform: translateY(-50%); /* Ajusta o posicionamento vertical */
+    color: #666; /* Define a cor dos ícones */
 }
 
+/* Estilos específicos para o ícone de usuário */
 .input-container i.bxs-user {
-    left: 10px;
+    left: 5px; /* Define a distância da borda esquerda */
 }
 
+/* Estilos específicos para o ícone de cadeado */
 .input-container i.bxs-lock-alt {
-    left: 10px;
+    left: 5px; /* Define a distância da borda esquerda */
 }
 
+/* Estilos específicos para o ícone de alternar senha */
 .input-container i.toggle-password {
-    position: absolute;
-    right: -350px; /* Alinhado à direita */
+    right: -350px; /* Alinha o ícone à direita */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
 }
 
-.input-container input, 
+/* Estilos para os inputs e selects */
+.input-container input,
 .input-container select {
-    font-family: var(--fonte-principal);
-    width: 100%;
-    padding: 12px;
-    padding-left: 40px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
+    font-family: var(--fonte-principal); /* Aplica a fonte principal */
+    width: 100%; /* Define a largura para ocupar todo o espaço disponível */
+    padding: 12px; /* Adiciona preenchimento interno */
+    padding-left: 40px; /* Adiciona preenchimento à esquerda para o ícone */
+    padding-right: 40px; /* Adiciona preenchimento à direita para o ícone de alternar senha */
+    border: 1px solid #ccc; /* Define a borda */
+    border-radius: 8px; /* Arredonda os cantos */
+    font-size: 1rem; /* Define o tamanho da fonte */
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
 }
 
+/* Estilos para os botões */
 button {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    background: #000;
-    color: #fff;
-    transition: transform 0.3s ease;
+    width: 100%; /* Define a largura para ocupar todo o espaço disponível */
+    padding: 12px; /* Adiciona preenchimento interno */
+    margin: 10px 0; /* Adiciona margem superior e inferior */
+    border: none; /* Remove a borda */
+    border-radius: 8px; /* Arredonda os cantos */
+    font-size: 1rem; /* Define o tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    background: #000; /* Define o fundo como preto */
+    color: #fff; /* Define a cor do texto como branco */
+    transition: transform 0.3s ease; /* Adiciona uma transição suave */
 }
 
+/* Estilos para o hover dos botões */
 button:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Aumenta o tamanho no hover */
+}
+
+/* Estilos para o botão primário */
+button.btn-primary {
+    display: block; /* Garante que o botão ocupe toda a largura */
+    width: 100%; /* Define a largura para 100% do contêiner pai */
+    padding: 12px; /* Define o preenchimento interno */
+    margin: 10px 0; /* Define as margens superior e inferior */
+    border: none; /* Remove a borda padrão */
+    border-radius: 8px; /* Arredonda os cantos */
+    font-size: 1rem; /* Define o tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para uma mãozinha */
+    background: #000; /* Define a cor de fundo */
+    color: #fff; /* Define a cor do texto */
+    transition: transform 0.3s ease; /* Adiciona uma transição suave */
+    box-sizing: border-box; /* Inclui preenchimento e borda na largura total */
+}
+
+/* Estilos para o hover do botão primário */
+button.btn-primary:hover {
+    transform: scale(1.05); /* Aumenta o tamanho no hover */
+}
+
+/* Estilos para o link secundário (aparência de botão) */
+.btn-secondary {
+    display: block; /* Garante que o link ocupe toda a largura */
+    width: 100%; /* Define a largura para 100% do contêiner pai */
+    padding: 12px; /* Define o preenchimento interno */
+    margin: 10px 0; /* Define as margens superior e inferior */
+    border: none; /* Remove a borda padrão */
+    border-radius: 8px; /* Arredonda os cantos */
+    font-size: 1rem; /* Define o tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para uma mãozinha */
+    background: #000; /* Define a cor de fundo */
+    color: #fff; /* Define a cor do texto */
+    transition: transform 0.3s ease; /* Adiciona uma transição suave */
+    text-align: center; /* Centraliza o texto */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    box-sizing: border-box; /* Inclui preenchimento e borda na largura total */
+}
+
+/* Estilos para o hover do link secundário */
+.btn-secondary:hover {
+    transform: scale(1.05); /* Aumenta o tamanho no hover */
 }
 
 /* Responsividade */
 
-/* Celular */
+/* Estilos para telas de celular (máximo 480px) */
 @media only screen and (max-width: 480px) {
     .container {
-        flex-direction: column;
-        height: auto;
+        flex-direction: column; /* Empilha os painéis verticalmente */
+        height: auto; /* Ajusta a altura automaticamente */
     }
 
-    .left-panel, .right-panel {
-        flex: unset;
-        width: 100%;
-        padding: 20px;
+    .left-panel,
+    .right-panel {
+        flex: unset; /* Remove a proporção de largura */
+        width: 100%; /* Ocupa toda a largura disponível */
+        padding: 20px; /* Reduz o preenchimento interno */
     }
 
     .left-panel h1 {
-        font-size: 2rem;
-        text-align: center;
+        font-size: 2rem; /* Reduz o tamanho da fonte */
+        text-align: center; /* Centraliza o texto */
     }
 
-    .left-panel h2, .tag {
-        font-size: 2rem;
-        text-align: center;
+    .left-panel h2,
+    .tag {
+        font-size: 2rem; /* Reduz o tamanho da fonte */
+        text-align: center; /* Centraliza o texto */
     }
 }
 
-/* Tablet */
+/* Estilos para telas de tablet (máximo 768px) */
 @media only screen and (max-width: 768px) {
     .container {
-        flex-direction: column;
-        height: auto;
+        flex-direction: column; /* Empilha os painéis verticalmente */
+        height: auto; /* Ajusta a altura automaticamente */
     }
 
-    .left-panel, .right-panel {
-        flex: unset;
-        width: 100%;
-        padding: 30px;
+    .left-panel,
+    .right-panel {
+        flex: unset; /* Remove a proporção de largura */
+        width: 100%; /* Ocupa toda a largura disponível */
+        padding: 30px; /* Reduz o preenchimento interno */
     }
 
     .left-panel h1 {
-        font-size: 2.5rem;
-        text-align: center;
+        font-size: 2.5rem; /* Reduz o tamanho da fonte */
+        text-align: center; /* Centraliza o texto */
     }
 
-    .left-panel h2, .tag {
-        font-size: 1.2rem;
-        text-align: center;
+    .left-panel h2,
+    .tag {
+        font-size: 1.2rem; /* Reduz o tamanho da fonte */
+        text-align: center; /* Centraliza o texto */
     }
 }
 
-/* Notebook */
+/* Estilos para telas de notebook (máximo 1024px) */
 @media only screen and (max-width: 1024px) {
     .left-panel h1 {
-        font-size: 2.8rem;
+        font-size: 2.8rem; /* Reduz o tamanho da fonte */
     }
 
     .left-panel h2 {
-        font-size: 1.4rem;
+        font-size: 1.4rem; /* Reduz o tamanho da fonte */
     }
 }
 
-/* Responsividade para monitores com largura ~1042px e altura ~600px */
+/* Estilos para monitores com largura ~1042px e altura ~600px */
 @media (max-width: 1042px) and (max-height: 600px) {
     body {
         display: flex;
@@ -226,12 +297,14 @@ button:hover {
     }
 
     .container {
-        flex-direction: column; /* Empilhar os painéis verticalmente */
+        flex-direction: column;
+        /* Empilhar os painéis verticalmente */
         width: 100%;
         height: auto;
         max-height: none;
         margin: 0 auto;
-        box-shadow: none; /* Remove a sombra para simplificar o design */
+        box-shadow: none;
+        /* Remove a sombra para simplificar o design */
         border-radius: 0;
     }
 
@@ -243,7 +316,8 @@ button:hover {
     }
 
     .left-panel h1 {
-        font-size: 2rem; /* Reduz o tamanho da fonte */
+        font-size: 2rem;
+        /* Reduz o tamanho da fonte */
     }
 
     .left-panel h2 {
@@ -264,7 +338,8 @@ button:hover {
 
     .cadastro-box {
         width: 100%;
-        max-width: 350px; /* Ajusta o tamanho da caixa */
+        max-width: 350px;
+        /* Ajusta o tamanho da caixa */
     }
 
     .cadastro-box h2 {
@@ -272,7 +347,8 @@ button:hover {
     }
 
     .input-container input {
-        font-size: 0.9rem; /* Reduz o tamanho da fonte nos inputs */
+        font-size: 0.9rem;
+        /* Reduz o tamanho da fonte nos inputs */
     }
 
     .input-container i {
@@ -285,7 +361,7 @@ button:hover {
     }
 }
 
-/* Responsividade para monitores com largura ~1042px e altura acima de 600px */
+/* Estilos para monitores com largura ~1042px e altura acima de 600px */
 @media (max-width: 1042px) and (min-height: 601px) {
     body {
         display: flex;
@@ -299,12 +375,16 @@ button:hover {
 
     .container {
         flex-direction: column;
-        width: 90%; /* Ajusta a largura para ocupar mais espaço */
-        max-width: 800px; /* Limita o tamanho máximo */
+        width: 90%;
+        /* Ajusta a largura para ocupar mais espaço */
+        max-width: 800px;
+        /* Limita o tamanho máximo */
         height: auto;
         margin: 0 auto;
-        border-radius: 10px; /* Mantém bordas arredondadas */
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sutil efeito de sombra */
+        border-radius: 10px;
+        /* Mantém bordas arredondadas */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        /* Sutil efeito de sombra */
     }
 
     .left-panel {
@@ -315,7 +395,8 @@ button:hover {
     }
 
     .left-panel h1 {
-        font-size: 2.5rem; /* Um pouco maior em telas maiores */
+        font-size: 2.5rem;
+        /* Um pouco maior em telas maiores */
     }
 
     .left-panel h2 {
@@ -336,7 +417,8 @@ button:hover {
 
     .cadastro-box {
         width: 100%;
-        max-width: 400px; /* Um pouco maior para maior altura */
+        max-width: 400px;
+        /* Um pouco maior para maior altura */
     }
 
     .cadastro-box h2 {
@@ -347,11 +429,9 @@ button:hover {
         font-size: 1rem;
         padding: 12px;
     }
-    
 
     button {
         font-size: 1.1rem;
         padding: 12px 20px;
     }
 }
-

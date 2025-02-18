@@ -1,31 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url(../styles/reset.css);
-
+@import url('reset.css');
 
 :root{
-    --cor-principal: #000000;
-    --cor-secundaria: #ffffff;
-    --cor-texto: #000000;
-    --fonte-principal: "Montserrat", sans-serif;
-    --background-color: #000000;
-    --text-color: #FFFFFF;
-    --fonte-principal: "Montserrat", sans-serif;
+    --cor-principal: #000000; /* Cor principal para elementos de destaque */
+    --cor-secundaria: #ffffff; /* Cor secundária para fundos e detalhes */
+    --cor-texto: #000000; /* Cor do texto principal */
+    --fonte-principal: "Montserrat", sans-serif; /* Fonte principal para todo o texto */
+    --background-color: #000000; /* Cor de fundo geral da página */
+    --text-color: #FFFFFF; /* Cor do texto em elementos de destaque */
+    --border-radius: 4px; /* Raio padrão para cantos arredondados (botões, inputs) */
+    --padding-vertical: 12px; /* Espaçamento vertical padrão dentro de botões e inputs */
+    --padding-horizontal: 20px; /* Espaçamento horizontal padrão dentro de botões e inputs */
+    --transition-duration: 0.3s; /* Duração padrão para transições (hover effects) */
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidade */
 }
-
-
 
 body {
     font-family: var(--fonte-principal);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #000, #fff);
-    background-size: 200% 200%;
-    animation: gradientMove 4.5s infinite alternate;
+    height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+    background: linear-gradient(135deg, #000, #fff); /* Gradiente de fundo */
+    background-size: 200% 200%; /* Tamanho do background para a animação */
+    animation: gradientMove 4.5s infinite alternate; /* Animação do gradiente */
     color: #fff;
 }
 
+/* Animação do gradiente de fundo */
 @keyframes gradientMove {
     0% {
         background-position: 0% 50%;
@@ -35,168 +37,222 @@ body {
     }
 }
 
+/* Container principal que envolve a página de login */
 .container {
     display: flex;
-    width: 100rem;
-    height: 80%;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease; /* Suaviza a transição de tamanho */
+    width: 100rem; /* Largura fixa do container */
+    height: 80%; /* Altura do container */
+    border-radius: 10px; /* Cantos arredondados */
+    overflow: hidden; /* Esconde conteúdo que ultrapassa as bordas */
+    box-shadow: var(--box-shadow); /* Sombra para dar profundidade */
+    transition: all 0.3s ease; /* Transição suave para mudanças de tamanho */
 }
 
-
-
+/* Painel esquerdo com informações e logo */
 .left-panel {
-    flex: 3; /* Aumente o espaço ocupado para 3 partes */
-    background: rgba(0, 0, 0, 0.8);
-    padding: 50px;
+    flex: 3; /* Ocupa 3/5 do espaço disponível */
+    background: rgba(0, 0, 0, 0.8); /* Fundo preto semi-transparente */
+    padding: 80px; /* Espaçamento interno */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     text-align: left;
     color: #fff;
-    transition: flex 0.3s ease; /* Suaviza a transição de tamanho */
+    transition: flex 0.3s ease; /* Transição suave para mudanças de tamanho */
+    overflow: hidden; /* Esconde conteúdo que ultrapassa as bordas */
+    position: relative; /* Posicionamento relativo para elementos internos */
 }
 
 .left-panel h1 {
-    font-size: 5.5rem;
-    margin-bottom: 40px;
-
+    font-size: 5.5rem; /* Tamanho da fonte do título */
+    margin-bottom: 40px; /* Espaçamento abaixo do título */
 }
 
+/* Estilo da tag "InsightAI" */
 .tag {
-    background-color: #fff;
-    color: rgb(0, 0, 0);
-    padding: 10px 40px;
-    border-radius: 20px;
-    font-size: 2rem;
-    font-weight: bold;
+    display: inline-block; /* Permite definir largura e altura */
+    font-size: 2rem; /* Tamanho da fonte */
+    padding: 10px 40px; /* Espaçamento interno */
+    background-color: #fff; /* Fundo branco */
+    color: #000; /* Cor do texto */
+    border-radius: 20px; /* Cantos arredondados */
+    font-weight: bold; /* Texto em negrito */
+    text-align: center;
+    cursor: pointer; /* Altera o cursor ao passar o mouse */
+    transition: transform 0.3s ease, font-size 0.3s ease, padding 0.3s ease; /* Transições suaves */
+    position: relative; /* Posicionamento relativo para alinhamento */
 }
 
+/* Efeito de expansão ao passar o mouse na tag */
+.tag:hover {
+    transform: scale(1.5); /* Aumenta o tamanho */
+    font-size: 1.5rem; /* Reduz o tamanho da fonte */
+    padding: 10px 60px; /* Aumenta o espaçamento interno */
+}
+
+/* Painel direito com o formulário de login */
 .right-panel {
-    flex: 1; /* Mantém o espaço menor para o painel direito */
-    background: rgb(255, 255, 255);
+    flex: 1; /* Ocupa 1/5 do espaço disponível */
+    background: rgb(255, 255, 255); /* Fundo branco */
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: flex 0.3s ease; /* Suaviza a transição de tamanho */
+    transition: flex 0.3s ease; /* Transição suave para mudanças de tamanho */
 }
 
+/* Expande o painel direito ao passar o mouse */
 .right-panel:hover {
-    flex: 2; /* Expande o painel direito ao passar o mouse */
+    flex: 2;
 }
 
+/* Diminui o painel esquerdo quando o painel direito é expandido */
 .right-panel:hover ~ .left-panel {
-    flex: 2; /* Diminui o tamanho do painel esquerdo proporcionalmente */
+    flex: 2;
 }
 
+/* Caixa de login que contém o formulário e os botões */
 .login-box {
-    background-color: #fff;
-    color: #333;
-    padding: 60px;
-    border-radius: 8px;
+    background-color: #fff; /* Fundo branco */
+    color: #333; /* Cor do texto */
+    padding: 60px; /* Espaçamento interno */
+    border-radius: 8px; /* Cantos arredondados */
     text-align: center;
-    width: 100%;
-    max-width: 350px;
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 350px; /* Largura máxima */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box; /* Garante que padding e border não afetem a largura */
 }
 
 .login-box h2 {
-    font-size: 3.0rem;
-    margin-bottom: 40px;
-    color: #333;
+    font-size: 3.0rem; /* Tamanho da fonte do título */
+    margin-bottom: 40px; /* Espaçamento abaixo do título */
+    color: #333; /* Cor do texto */
 }
 
 .login-box p {
-    margin-bottom: 20px;
-    font-size: 0.9rem;
-    color: #666;
+    margin-bottom: 20px; /* Espaçamento abaixo do parágrafo */
+    font-size: 0.9rem; /* Tamanho da fonte */
+    color: #666; /* Cor do texto */
 }
 
+/* Container para cada campo de input */
 .input-container {
-    position: relative;
-    margin-bottom: 15px;
+    position: relative; /* Posicionamento relativo para o ícone */
+    margin-bottom: 15px; /* Espaçamento abaixo do input */
+    width: 100%; /* Ocupa toda a largura disponível */
 }
 
+/* Estilo dos ícones dentro dos inputs */
 .input-container i {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #333;
-    cursor: pointer;
+    position: absolute; /* Posicionamento absoluto */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Ajuste fino do posicionamento */
+    color: #333; /* Cor do ícone */
+    cursor: pointer; /* Altera o cursor ao passar o mouse */
 }
 
+/* Posicionamento do ícone de usuário */
 .input-container i.bxs-user {
-    left: 10px;
+    left: 10px; /* Distância da borda esquerda */
 }
 
+/* Posicionamento do ícone de senha */
 .input-container i.bxs-lock-alt {
-    left: 10px;
+    left: 10px; /* Distância da borda esquerda */
 }
 
+/* Posicionamento do ícone para mostrar/esconder senha */
 .input-container i.toggle-password {
-    right: 5px; /* Alinhado à direita */
+    right: 5px; /* Distância da borda direita */
 }
 
+/* Estilo dos inputs */
 .input-container input {
-    width: 90%;
-    height: 100%;
-    padding: 12px;
+    width: 100%; /* Ocupa toda a largura disponível */
+    padding: 12px; /* Espaçamento interno */
     padding-left: 30px; /* Espaço para o ícone */
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    background-color: #f9f9f9;
-    font-size: 1rem;
-    color: #000000;
+    border: 1px solid #ccc; /* Borda */
+    border-radius: 15px; /* Cantos arredondados */
+    background-color: #f9f9f9; /* Fundo levemente cinza */
+    font-size: 1rem; /* Tamanho da fonte */
+    color: #000000; /* Cor do texto */
+    box-sizing: border-box; /* Garante que padding e border não afetem a largura */
 }
 
+/* Estilo do placeholder dos inputs */
 .input-container input::placeholder {
-    color: #aaa;
+    color: #aaa; /* Cor do placeholder */
 }
 
+/* Container para o "Lembrar minha senha" */
 .remember-me {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Espaçamento abaixo */
+    width: 100%; /* Ocupa toda a largura disponível */
 }
 
+/* Estilo do checkbox "Lembrar minha senha" */
 .remember-me input {
-    margin-right: 10px;
+    margin-right: 10px; /* Espaçamento à direita do checkbox */
 }
 
-button {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+/* Container para os botões "Acessar" e "Criar minha conta" */
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Ocupa toda a largura disponível */
+    gap: 10px; /* Espaçamento entre os botões */
+    margin-top: 20px; /* Espaçamento acima do primeiro botão */
 }
 
-.btn-primary {
-    background-color: #000000;
-    color: #ffffff;
-}
-
-.btn-primary:hover {
-    background-color: #000000;
-    transform: scale(1.05);
-}
-
+/* Estilo base para os botões (Acessar e Criar conta) */
+.btn-primary,
 .btn-secondary {
-    background-color: #000000;
-    color: #ffffff;
+    display: inline-block; /* Permite definir largura e altura */
+    width: 100%; /* Ocupa toda a largura disponível */
+    padding: var(--padding-vertical) var(--padding-horizontal); /* Espaçamento interno */
+    border: none; /* Remove a borda */
+    border-radius: var(--border-radius); /* Cantos arredondados */
+    font-size: 1rem; /* Tamanho da fonte */
+    cursor: pointer; /* Altera o cursor ao passar o mouse */
+    text-align: center;
+    text-decoration: none; /* Remove o sublinhado dos links */
+    transition: background-color var(--transition-duration) ease, transform 0.2s ease; /* Transições suaves */
+    box-sizing: border-box; /* Garante que padding e border não afetem a largura */
 }
 
+/* Estilo específico para o botão "Acessar" */
+.btn-primary {
+    background-color: var(--cor-principal); /* Cor de fundo */
+    color: var(--text-color); /* Cor do texto */
+    margin-bottom: 1rem;
+}
+
+/* Estilo específico para o botão "Criar minha conta" */
+.btn-secondary {
+    background-color: #333333; /* Cor de fundo */
+    color: var(--text-color); /* Cor do texto */
+}
+
+/* Efeito de hover nos botões */
+.btn-primary:hover,
 .btn-secondary:hover {
-    background-color: #000000;
-    transform: scale(1.05);
+    transform: scale(1.05); /* Aumenta levemente o tamanho */
 }
 
-/* Estilo para o título expansível */
+/* Estilo para mensagens de erro */
+.error-message {
+    color: red; /* Cor do texto */
+    margin-top: 10px; /* Espaçamento acima da mensagem */
+    text-align: center;
+    font-size: 0.9rem; /* Tamanho da fonte */
+}
+
+/* Estilo para o título expansível (não usado na página de login) */
 .expandable-title {
     position: relative;
     font-size: 1.8rem;
@@ -216,42 +272,3 @@ button {
     font-size: 2.2rem;
     transform: scale(1.1);
 }
-
-/* Configuração do left-panel para conter a expansão */
-.left-panel {
-    flex: 2;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: left;
-    color: #fff;
-    overflow: hidden; /* Impede que o conteúdo ultrapasse os limites */
-    position: relative; /* Necessário para "conter" elementos */
-}
-
-/* Estilo da tag */
-.tag {
-    display: inline-block;
-    font-size: 2rem;
-    padding: 10px 40px;
-    background-color: #fff;
-    color: #000;
-    border-radius: 20px;
-    font-weight: bold;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, font-size 0.3s ease, padding 0.3s ease;
-    position: relative; /* Garante alinhamento no left-panel */
-}
-
-/* Efeito de expansão no hover */
-.tag:hover {
-    transform: scale(1.5); /* Expande proporcionalmente */
-    font-size: 1.5rem;    /* Aumenta o tamanho do texto */
-    padding: 10px 60px;   /* Aumenta o preenchimento interno */
-}
-
-
