@@ -12,14 +12,15 @@
         <aside class="menu-lateral" aria-label="Menu Lateral">
             <nav>
                 <ul class="menu-principal">
-                    <li><a href="../templates/home.html">Dashboard</a></li>
+                    <li><a href="{{ url_for('home') }}">Dashboard</a></li>
                     <li><a href="#">Upload de Dados</a></li>
-                    <li><a href="../templates/chatbot.html">Chatbot</a></li>
-                    <li><a href="../templates/relatorios.html">Relatórios</a></li>
+                    <li><a href="{{ url_for('chatbot') }}">Chatbot</a></li>
+                    <li><a href="{{ url_for('relatorios') }}">Relatórios</a></li>
                 </ul>
                 <ul class="menu-secundario">
-                    <li><a href="../templates/configuracoes.html">Configurações</a></li>
-                    <li><a href="../templates/index.html">Sobre Nós</a></li>
+                    <li><a href="{{ url_for('configuracoes') }}">Configurações</a></li>
+                    <li><a href="{{ url_for('index') }}">Sobre Nós</a></li>
+                    <li><a href="{{ url_for('index') }}">Sair</a></li>
                 </ul>
             </nav>
         </aside>
