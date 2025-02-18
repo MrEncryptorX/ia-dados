@@ -12,15 +12,15 @@
         <aside class="menu-lateral" aria-label="Menu Lateral">
             <nav>
                 <ul class="menu-principal">
-                    <li><a href="../templates/home.html">Dashboard</a></li>
+                    <li><a href="{{ url_for('home') }}">Dashboard</a></li>
                     <li><a href="#">Upload de Dados</a></li>
-                    <li><a href="../templates/chatbot.html">Chatbot</a></li>
-                    <li><a href="../templates/relatorios.html">Relatórios</a></li>
+                    <li><a href="{{ url_for('chatbot') }}">Chatbot</a></li>
+                    <li><a href="{{ url_for('relatorios') }}">Relatórios</a></li>
                 </ul>
                 <ul class="menu-secundario">
-                    <li><a href="../templates/configuracoes.html">Configurações</a></li>
-                    <li><a href="../templates/index.html">Sobre Nós</a></li>
-                    <li><a href="#">Sair</a></li> <!-- Adicionado link para a página inicial -->
+                    <li><a href="{{ url_for('configuracoes') }}">Configurações</a></li>
+                    <li><a href="{{ url_for('index') }}">Sobre Nós</a></li>
+                    <li><a href="{{ url_for('index') }}">Sair</a></li>
                 </ul>
             </nav>
         </aside>
@@ -51,21 +51,21 @@
                     <div class="arquivos">
                         <div class="arquivo">
                             <a href="../templates/importJson.html">
-                                <img alt="Importar Arquivo JSON" src="../assets/imagens/arquivo-json.png">
+                                <img alt="Importar Arquivo JSON" src="{{ url_for('serve_images', filename='arquivo-json.png') }}">
                             </a>
                             <p>JSON</p> <!-- Adicionado texto para identificar o tipo de arquivo -->
                         </div>
                         <div class="arquivo">
                             <a href="../templates/importCsv.html">
-                                <img alt="Importar Arquivo CSV" src="../assets/imagens/csv.png">
+                                <img alt="Importar Arquivo CSV" src="{{ url_for('serve_images', filename='csv.png') }}">
                             </a>
                             <p>CSV</p> <!-- Adicionado texto para identificar o tipo de arquivo -->
                         </div>
                         <div class="seta" aria-hidden="true">
-                            <img alt="Seta para a direita" src="../assets/imagens/seta-direita-de-linha-reta-fina.png">
+                            <img alt="Seta para a direita" src="{{ url_for('serve_images', filename='seta-direita-de-linha-reta-fina.png') }}">
                         </div>
                         <div class="arquivo" aria-hidden="true">
-                            <img alt="Imagem do Dashboard" src="../assets/imagens/painel.png">
+                            <img alt="Imagem do Dashboard" src="{{ url_for('serve_images', filename='painel.png') }}">
                         </div>
                     </div>
                 </section>

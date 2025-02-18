@@ -4,7 +4,7 @@
     <title>Configurações - InsightAI</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/configuracoes.css">
+    <link rel="stylesheet" href="{{ url_for('serve_css', filename='configuracoes.css') }}">
 </head>
 <body>
     <div class="container">
@@ -12,14 +12,15 @@
         <aside class="menu-lateral" aria-label="Menu Lateral">
             <nav>
                 <ul class="menu-principal">
-                    <li><a href="../templates/home.html">Dashboard</a></li>
+                    <li><a href="{{ url_for('home') }}">Dashboard</a></li>
                     <li><a href="#">Upload de Dados</a></li>
-                    <li><a href="../templates/chatbot.html">Chatbot</a></li>
-                    <li><a href="../templates/relatorios.html">Relatórios</a></li>
+                    <li><a href="{{ url_for('chatbot') }}">Chatbot</a></li>
+                    <li><a href="{{ url_for('relatorios') }}">Relatórios</a></li>
                 </ul>
                 <ul class="menu-secundario">
-                    <li><a href="../templates/configuracoes.html">Configurações</a></li>
-                    <li><a href="../templates/index.html">Sobre Nós</a></li>
+                    <li><a href="{{ url_for('configuracoes') }}">Configurações</a></li>
+                    <li><a href="{{ url_for('index') }}">Sobre Nós</a></li>
+                    <li><a href="{{ url_for('index') }}">Sair</a></li>
                 </ul>
             </nav>
         </aside>
@@ -27,7 +28,7 @@
         <!-- Conteúdo principal -->
         <div class="conteudo">
             <header class="cabecalho" role="banner">
-                <a href="#" class="logo">InsightAI</a>
+                <a href="{{ url_for('home') }}" class="logo">InsightAI</a>
             </header>
 
             <main class="principal" role="main">
@@ -59,6 +60,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="{{ url_for('serve_js', filename='script.js') }}"></script>
 </body>
 </html>

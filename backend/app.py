@@ -120,6 +120,12 @@ def home():
     logging.info("Página home acessada")
     return render_template('home.html')
 
+# Página de configurações
+@app.route('/configuracoes')
+def configuracoes():
+    logging.info("Página de configurações acessada")
+    return render_template('configuracoes.html')
+
 # Outras rotas
 @app.route('/basedeconhecimento')
 def BaseDeConhecimento():
@@ -137,6 +143,7 @@ def importcsv():
 def importjson():
     return render_template('importJson.html')
 
+# Página Relatórios
 @app.route('/relatorios')
 def relatorios():
     return render_template('relatorios.html')

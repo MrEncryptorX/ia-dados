@@ -15,6 +15,10 @@ body {
     display: block;
 }
 
+.principal {
+    height: 100vh;
+}
+
 .titleSearch{
     text-align: center;
     margin-top: 2%;
@@ -33,7 +37,7 @@ body {
     font-size: 1rem;
     border: 2px solid var(--cor-principal);
     border-radius: 25px;
-    margin-top: 85%;
+    margin-top: 70%;
     outline: none;
     transition: box-shadow 0.3s ease;
 }

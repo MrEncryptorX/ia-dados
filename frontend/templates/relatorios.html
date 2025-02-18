@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Histórico de Pesquisa</title>
-    <link rel="stylesheet" href="../styles/relatorios.css">
-    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="{{ url_for('serve_css', filename='relatorios.css') }}">
+    <link rel="stylesheet" href="{{ url_for('serve_css', filename='home.css') }}">
 </head>
 <body>
     <div class="container">
@@ -13,14 +13,15 @@
         <aside class="menu-lateral" aria-label="Menu Lateral">
             <nav>
                 <ul class="menu-principal">
-                    <li><a href="../templates/home.html">Dashboard</a></li>
+                    <li><a href="{{ url_for('home') }}">Dashboard</a></li>
                     <li><a href="#">Upload de Dados</a></li>
-                    <li><a href="../templates/chatbot.html">Chatbot</a></li>
-                    <li><a href="../templates/relatorios.html">Relatórios</a></li>
+                    <li><a href="{{ url_for('chatbot') }}">Chatbot</a></li>
+                    <li><a href="{{ url_for('relatorios') }}">Relatórios</a></li>
                 </ul>
                 <ul class="menu-secundario">
-                    <li><a href="../templates/configuracoes.html">Configurações</a></li>
-                    <li><a href="../templates/index.html">Sobre Nós</a></li>
+                    <li><a href="{{ url_for('configuracoes') }}">Configurações</a></li>
+                    <li><a href="{{ url_for('index') }}">Sobre Nós</a></li>
+                    <li><a href="{{ url_for('index') }}">Sair</a></li>
                 </ul>
             </nav>
         </aside>
@@ -28,7 +29,7 @@
         <!-- Conteúdo principal -->
         <div class="conteudo">
             <header class="cabecalho">
-                <a href="../templates/home.html" class="logo">InsightAI</a>
+                <a href="{{ url_for('home') }}" class="logo">InsightAI</a>
             </header>
 
             <main class="principal">
@@ -38,7 +39,7 @@
                 <div  class="searchrelatorio" >
                     <input class="inputsearch"  type="text"placeholder="Busque no histórico...">
                     <button class="sendButton" type="submit">
-                        <img src="../assets/imagens/enviar.png" alt="Enviar" class="sendArrow">
+                        <img src="{{ url_for('serve_images', filename='enviar.png') }}" alt="Enviar" class="sendArrow">
                     </button>
                 </div>
                 

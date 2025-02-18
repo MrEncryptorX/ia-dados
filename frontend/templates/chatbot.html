@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Importar JSON</title>
-    <link rel="stylesheet" href="../styles/chatbot.css">
-    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="{{ url_for('serve_css', filename='chatbot.css') }}">
+    <link rel="stylesheet" href="{{ url_for('serve_css', filename='home.css') }}">
 </head>
 <body>
     <div class="container">
@@ -13,14 +13,15 @@
         <aside class="menu-lateral" aria-label="Menu Lateral">
             <nav>
                 <ul class="menu-principal">
-                    <li><a href="../templates/home.html">Dashboard</a></li>
+                    <li><a href="{{ url_for('home') }}">Dashboard</a></li>
                     <li><a href="#">Upload de Dados</a></li>
-                    <li><a href="../templates/chatbot.html">Chatbot</a></li>
-                    <li><a href="../templates/relatorios.html">Relatórios</a></li>
+                    <li><a href="{{ url_for('chatbot') }}">Chatbot</a></li>
+                    <li><a href="{{ url_for('relatorios') }}">Relatórios</a></li>
                 </ul>
                 <ul class="menu-secundario">
-                    <li><a href="../templates/configuracoes.html">Configurações</a></li>
-                    <li><a href="../templates/index.html">Sobre Nós</a></li>
+                    <li><a href="{{ url_for('configuracoes') }}">Configurações</a></li>
+                    <li><a href="{{ url_for('index') }}">Sobre Nós</a></li>
+                    <li><a href="{{ url_for('index') }}">Sair</a></li>
                 </ul>
             </nav>
         </aside>
@@ -28,17 +29,17 @@
         <!-- Conteúdo principal -->
         <div class="conteudo">
             <header class="cabecalho">
-                <a href="home.html" class="logo">InsightAI</a>
+                <a href="{{ url_for('home') }}" class="logo">InsightAI</a>
             </header>
 
             <main class="principal">
                 <section class="titleSearch">
-                    <h1>Escreva o que deseja saber sobre os seu dados</h1>
+                    <h1>Escreva o que deseja saber sobre os seus dados</h1>
                     <div class="searchBox">
                         <div class="searchWrapper">
                             <input type="text" class="searchJson" placeholder="EX: Quero saber a previsão de vendas para o próximo mês">
                             <button class="sendButton" type="submit">
-                                <img src="../assets/imagens/enviar.png" alt="Enviar" class="sendArrow">
+                                <img src="{{ url_for('serve_images', filename='enviar.png') }}" alt="Enviar" class="sendArrow">
                             </button>
                         </div>
                     </div>
@@ -50,9 +51,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
-
+    <script src="{{ url_for('serve_js', filename='script.js') }}"></script>
 </body>
 </html>
