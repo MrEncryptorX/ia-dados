@@ -110,50 +110,50 @@ body {
     color: #333; /* Define a cor do texto */
 }
 
-/* Estilos para o container dos inputs */
 .input-container {
-    position: relative; /* Permite posicionar os ícones de forma absoluta */
-    margin-bottom: 15px; /* Adiciona margem inferior */
-    width: 100%; /* Define a largura para ocupar todo o espaço disponível */
+    position: relative;
+    margin-bottom: 15px;
+    width: 100%;
 }
 
-/* Estilos para os ícones dentro dos inputs */
 .input-container i {
-    position: absolute; /* Permite posicionar os ícones */
-    left: 10px; /* Define a distância da borda esquerda */
-    top: 50%; /* Posiciona verticalmente no centro */
-    transform: translateY(-50%); /* Ajusta o posicionamento vertical */
-    color: #666; /* Define a cor dos ícones */
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
 }
 
-/* Estilos específicos para o ícone de usuário */
-.input-container i.bxs-user {
-    left: 5px; /* Define a distância da borda esquerda */
-}
-
-/* Estilos específicos para o ícone de cadeado */
+.input-container i.bxs-user,
 .input-container i.bxs-lock-alt {
-    left: 5px; /* Define a distância da borda esquerda */
+    left: 10px;
 }
 
-/* Estilos específicos para o ícone de alternar senha */
-.input-container i.toggle-password {
-    right: -350px; /* Alinha o ícone à direita */
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+.input-container input {
+    font-family: var(--fonte-principal);
+    width: 100%;
+    padding: 12px;
+    padding-left: 40px;
+    padding-right: 40px; /* Ajuste aqui */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
 }
 
-/* Estilos para os inputs e selects */
-.input-container input,
-.input-container select {
-    font-family: var(--fonte-principal); /* Aplica a fonte principal */
-    width: 100%; /* Define a largura para ocupar todo o espaço disponível */
-    padding: 12px; /* Adiciona preenchimento interno */
-    padding-left: 40px; /* Adiciona preenchimento à esquerda para o ícone */
-    padding-right: 40px; /* Adiciona preenchimento à direita para o ícone de alternar senha */
-    border: 1px solid #ccc; /* Define a borda */
-    border-radius: 8px; /* Arredonda os cantos */
-    font-size: 1rem; /* Define o tamanho da fonte */
-    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+/* Novo estilo para o span que contém o ícone */
+.password-toggle {
+    position: absolute;
+    right: 10px; /* Ajuste a distância da borda direita */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1; /* Garante que o ícone esteja acima do input */
+}
+
+.password-toggle i.toggle-password {
+    position: static; /* Remove o posicionamento absoluto do ícone */
+    transform: none;    /* Remove a transformação */
 }
 
 /* Estilos para os botões */

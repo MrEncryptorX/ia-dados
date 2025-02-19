@@ -33,8 +33,10 @@
                     </div>
                     <div class="input-container">
                         <i class="bx bxs-lock-alt"></i>
-                        {{ form.password(placeholder="Digite sua senha", required=true, id="password") }}
-                        <i class="bx bx-show toggle-password"></i>
+                        {{ form.password(placeholder="Digite sua senha", required=True, id="password") }}
+                        <span class="password-toggle">
+                            <i class="bx bx-show toggle-password"></i>
+                        </span>
                         {% if form.password.errors %}
                             <ul class="errors">
                                 {% for error in form.password.errors %}
@@ -43,10 +45,13 @@
                             </ul>
                         {% endif %}
                     </div>
+                    
                     <div class="input-container">
                         <i class="bx bxs-lock-alt"></i>
-                        {{ form.confirm_password(placeholder="Confirme sua senha", required=true, id="confirm-password") }}
-                        <i class="bx bx-show toggle-password"></i>
+                        {{ form.confirm_password(placeholder="Confirme sua senha", required=True, id="confirm-password") }}
+                        <span class="password-toggle">
+                            <i class="bx bx-show toggle-password"></i>
+                        </span>
                         {% if form.confirm_password.errors %}
                             <ul class="errors">
                                 {% for error in form.confirm_password.errors %}
