@@ -1,5 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url("responsivo.css");
+@keyframes zoomInOutBackground {
+    0% {
+        background-size: 200%; /* Zoom inicial ajustável */
+        transform: scale(20);
+    }
+    15%{
+        background-size: 185%;
+    }
+    25%{
+        background-size: 175%;
+    }
+    45%{
+        background-size: 155%;
+    }
+    50%{
+        background-size: 150%;
+    }
+    75%{
+        background-size: 125%;
+    }
+    85%{
+        background-size: 120%;
+    }
+    90%{
+        background-size: 110%;
+    }
+    95%{
+        background-size: 105%;
+    }
+    100% {
+        background-size: cover; /* Retorna ao tamanho original */
+        transform: scale(2.0);
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInMoveUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    70% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.texto-transicao {
+    animation: fadeInMoveUp 2.8s ease-out forwards;
+    transition: color 2.0s ease-in-out; /* Exemplo de transição de cor */
+}
+
+body {
+    background-image: url(/imagens/imagem_gerada.png); /* Certifique-se de que o caminho está correto */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    animation: zoomInOutBackground 1.5s linear forwards; /* Use 'linear' para suavizar a transição */
+}
 
 .container {
     flex-shrink: 0; /* Previne colapso de containers */
